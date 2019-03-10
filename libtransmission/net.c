@@ -135,6 +135,7 @@ void
 tr_netSetTOS (tr_socket_t s,
               int         tos)
 {
+#if 0
 #if defined (IP_TOS) && !defined (_WIN32)
     if (setsockopt (s, IPPROTO_IP, IP_TOS, (const void *) &tos, sizeof (tos)) == -1)
     {
@@ -145,6 +146,7 @@ tr_netSetTOS (tr_socket_t s,
 #else
     (void) s;
     (void) tos;
+#endif
 #endif
 }
 
